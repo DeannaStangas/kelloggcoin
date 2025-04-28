@@ -27,3 +27,33 @@ blockchain = [
 # Anthony's KelloggCoin balance is 2650
 
 # 👇👇👇 Your code HERE 👇👇👇
+balances = {}
+
+for transaction in blockchain
+  from_user = transaction["from_user"]
+  to_user = transaction["to_user"]
+  amount = transaction["amount"]
+
+  # Subtract amount from from_user's balance
+  if from_user != nil
+    if balances[from_user] == nil
+      balances[from_user] = 0
+    end
+    balances[from_user] = balances[from_user] - amount
+  end
+
+  # Add amount to to_user's balance
+  if balances[to_user] == nil
+    balances[to_user] = 0
+  end
+  balances[to_user] = balances[to_user] + amount
+end
+#Print the results
+bens_bal=balances["ben"]
+brians_bal=balances["brian"]
+evans_bal=balances["evan"]
+anthony_bal=balances["anthony"]
+puts "Ben's KelloggCoin balance is #{bens_bal}"
+puts "Brian's KelloggCoin balance is #{brians_bal}"
+puts "Evan's KelloggCoin balance is #{evans_bal}"
+puts "Anthony's KelloggCoin balance is #{anthony_bal} "
